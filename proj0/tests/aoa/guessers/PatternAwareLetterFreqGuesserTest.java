@@ -14,7 +14,7 @@ public class PatternAwareLetterFreqGuesserTest {
     @DisplayName("PatternAwareLetterFreqGuesser returns correct guesses for blank pattern")
     @Test
     public void testGetGuessBlankPattern() {
-        PatternAwareLetterFreqGuesser palfg = new PatternAwareLetterFreqGuesser("data/example.txt");
+        PatternAwareLetterFreqGuesser palfg = new PatternAwareLetterFreqGuesser("D:/Project/JavaProject/61b2023/skeleton-sp23/proj0/data/example.txt");
 
         // check that the first guess is e, the most common letter in the dictionary.
         char guess = palfg.getGuess("----", List.of());
@@ -33,7 +33,7 @@ public class PatternAwareLetterFreqGuesserTest {
     @DisplayName("PatternAwareLetterFreqGuesser returns correct guesses for -o-- pattern")
     @Test
     public void testGetGuess_o__Pattern() {
-        PatternAwareLetterFreqGuesser palfg = new PatternAwareLetterFreqGuesser("data/example.txt");
+        PatternAwareLetterFreqGuesser palfg = new PatternAwareLetterFreqGuesser("D:/Project/JavaProject/61b2023/skeleton-sp23/proj0/data/example.txt");
 
         // check that the first guess is c, the most common letter in the dictionary if the 2nd letter is o.
         char guess = palfg.getGuess("-o--", List.of('o'));

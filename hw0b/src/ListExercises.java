@@ -1,25 +1,49 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListExercises {
 
     /** Returns the total sum in a list of integers */
 	public static int sum(List<Integer> L) {
-        return 0;
+        int sum = 0;
+        for (Integer integer : L) {
+            sum += integer;
+        }
+        return sum;
     }
 
     /** Returns a list containing the even numbers of the given list */
     public static List<Integer> evens(List<Integer> L) {
-        return null;
+        List<Integer> res = new ArrayList<>();
+        for(Integer integer:L){
+            if(integer%2==0)
+                res.add(integer);
+        }
+        return res;
     }
 
     /** Returns a list containing the common item of the two given lists */
     public static List<Integer> common(List<Integer> L1, List<Integer> L2) {
-        return null;
+        List<Integer> res = new ArrayList<>();
+        for(Integer integer: L1){
+            if(L2.contains(integer)){
+                res.add(integer);
+            }
+        }
+        return res;
     }
 
 
     /** Returns the number of occurrences of the given character in a list of strings. */
     public static int countOccurrencesOfC(List<String> words, char c) {
-        return 0;
+        int res=0;
+        for(String string:words){
+            for(int i = 0; i<string.length();i++){
+                if(c==string.charAt(i)){
+                    res++;
+                }
+            }
+        }
+        return res;
     }
 }
