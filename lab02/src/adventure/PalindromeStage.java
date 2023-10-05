@@ -26,12 +26,11 @@ public class PalindromeStage implements AdventureStage {
 
     @Override
     public void playStage() {
-        System.out.println("""
-                The Woz is a cool name, much better than "Soda 430". Soda 606 is a neat, symmetric conference room,
-                like its number. We could rename The Woz to be palindromic, but it sounds so cool! Why not change the
-                room number instead?
-                (Give a palindromic room number.)
-                """);
+        System.out.println(
+                "The Woz is a cool name, much better than \"Soda 430\". Soda 606 is a neat, symmetric conference room,\n" +
+                "like its number. We could rename The Woz to be palindromic, but it sounds so cool! Why not change the\n" +
+                "room number instead?\n" +
+                "(Give a palindromic room number.)");
         while (true) {
             String input = in.readLine();
             while (!AdventureUtils.isInt(input)) {

@@ -10,10 +10,7 @@ public class AdventureGame {
     private AdventureStage currentStage;
 
     public AdventureGame(In in) {
-        this(in, new FillerStage("""
-                        It's a wonderful day of learning about computer science! We are going to see so many cool things today!
-                        Let's go! (To answer the prompts, type the possibilities in the brackets to go to that choice)"
-                        """,
+        this(in, new FillerStage("It's a wonderful day of learning about computer science! We are going to see so many cool things today!",
                         Map.of("go", new BeeCountingStage(in))
                 )
         );

@@ -26,15 +26,13 @@ public class MachineStage implements AdventureStage {
 
     @Override
     public void playStage() {
-        String msg = """
-                On the first (zeroth?) floor of Soda, below the labs, you find a mysterious machine.
-                It has holes for two lists of ints of the same length, and a third hole that looks
-                like it would output a number. The label reads:
+        String msg = "On the first (zeroth?) floor of Soda, below the labs, you find a mysterious machine.\n" +
+                "It has holes for two lists of ints of the same length, and a third hole that looks\n" +
+                "like it would output a number. The label reads:\n" +
 
-                    'SumOfElementWiseMax-inator'
+                    "'SumOfElementWiseMax-inator'\n" +
 
-                ... Huh. You decide to experiment with the machine for a bit.
-                    """;
+                "... Huh. You decide to experiment with the machine for a bit.\n";
 
         System.out.println(msg);
 

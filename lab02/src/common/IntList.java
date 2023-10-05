@@ -37,7 +37,9 @@ public class IntList {
     }
 
     public boolean equals(Object other) {
-        if (other instanceof IntList oL) {
+        if (other instanceof IntList) {
+            IntList oL;
+            oL = (IntList) other;
             if (first != oL.first) {
                 return false;
             } else if (rest == null && oL.rest == null) {

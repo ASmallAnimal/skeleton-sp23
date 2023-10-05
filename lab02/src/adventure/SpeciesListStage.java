@@ -36,11 +36,9 @@ public class SpeciesListStage implements AdventureStage {
 
     @Override
     public void playStage() {
-        String msg = """
-                Inside Professor Hug's office, you see some O'Reilly books. These books have cool animals on the
-                covers. As a budding computer scientist, you should be able to identify all kinds of neat animals.
-                Here's a few:
-                """;
+        String msg = "Inside Professor Hug's office, you see some O'Reilly books. These books have cool animals on the\n" +
+                "covers. As a budding computer scientist, you should be able to identify all kinds of neat animals.\n" +
+                "Here's a few";
         System.out.println(msg);
         System.out.println("- These large felines with spots will teach you how to react quickly.");
         System.out.println("- This native american bovine can be found in the plains, and happens to be EXTREMELY good at Java.");
