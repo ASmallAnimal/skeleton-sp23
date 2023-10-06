@@ -95,5 +95,4 @@ public class AdventureGame {
         AdventureGame adventure = new AdventureGame(new In());
         adventure.play();
     }
-
 }

@@ -68,6 +68,12 @@ public class SpeciesListStage implements AdventureStage {
      * @param reference a reference list of animals.
      */
     private void handleResponses(List<String> reference) {
+        if(reference.isEmpty())
+        {
+            String input = in.readLine();
+            return;
+        }
+
         while (true) {
             String input = in.readLine();
             List<String> user;
@@ -98,7 +104,7 @@ public class SpeciesListStage implements AdventureStage {
      */
     public static double arraySimilarity(List<String> listOne, List<String> listTwo) {
         List<String> copy = new ArrayList<>(listOne);
-        int similarObjects = 0;
+        double similarObjects = 0;
         for (String o : listTwo) {
             if (copy.contains(o)) {
                 similarObjects++;
