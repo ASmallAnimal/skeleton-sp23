@@ -1,5 +1,7 @@
 package timing;
 
+import org.w3c.dom.ls.LSException;
+
 /** An SLList is a list of integers, which hides the terrible truth
  * of the nakedness within. */
 public class SLList<Item> {
@@ -15,17 +17,20 @@ public class SLList<Item> {
 
     /* The first item (if it exists) is at sentinel.next. */
     private IntNode sentinel;
+    private IntNode Last;
     private int size;
 
     /** Creates an empty timingtest.SLList. */
     public SLList() {
         sentinel = new IntNode(null, null);
+        Last = sentinel;
         size = 0;
     }
 
     public SLList(Item x) {
         sentinel = new IntNode(null, null);
         sentinel.next = new IntNode(x, null);
+        Last = sentinel.next;
         size = 1;
     }
 
@@ -52,18 +57,13 @@ public class SLList<Item> {
         }
 
         p.next = new IntNode(x, null);
+        Last = p.next;
     }
 
     /** returns last item in the list */
     public Item getLast() {
-        IntNode p = sentinel;
 
-        /* Advance p to the end of the list. */
-        while (p.next != null) {
-            p = p.next;
-        }
-
-        return p.item;
+        return Last.item;
     }
 
 
