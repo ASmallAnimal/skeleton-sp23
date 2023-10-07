@@ -2,7 +2,7 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayDeque<T> implements Deque<T> {
+public class ArrayDeque<T> implements Deque<T>{
     public static void main(String[] args) {
         Deque<Integer> ad = new ArrayDeque<>();
     }
