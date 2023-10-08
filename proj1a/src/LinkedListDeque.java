@@ -27,7 +27,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
     }
     public Node sentinel;
-    int size = 0;
+    public int size = 0;
     public LinkedListDeque(){
         sentinel = new Node();
         sentinel.next = sentinel;
@@ -62,9 +62,7 @@ public class LinkedListDeque<T> implements Deque<T> {
 
     @Override
     public boolean isEmpty() {
-        if(sentinel.prev == sentinel)
-            return true;
-        return false;
+        return sentinel.prev == sentinel;
     }
 
     @Override
