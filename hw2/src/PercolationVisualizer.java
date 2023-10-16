@@ -21,7 +21,6 @@ import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 
 public class PercolationVisualizer {
-    /*
     // delay in miliseconds (controls animation speed)
     private static final int DELAY = 100;
 
@@ -86,8 +85,8 @@ public class PercolationVisualizer {
     }
 
     public static void main(String[] args) {
-        String filename = args[0];
+//        String filename = args[0];
+        String filename = "D:\\Project\\JavaProject\\61b2023\\skeleton-sp23\\hw2\\inputFiles\\input20.txt";
         simulateFromFile(filename);
     }
-    */
 }
