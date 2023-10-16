@@ -1,6 +1,10 @@
 package ngordnet.ngrams;
 
+import edu.princeton.cs.algs4.In;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -15,6 +19,8 @@ public class TimeSeries extends TreeMap<Integer, Double> {
     private static final int MAX_YEAR = 2100;
     // TODO: Add any necessary static/instance variables.
 
+    private TreeMap<Integer, Double> ts;
+
     /**
      * Constructs a new empty TimeSeries.
      */
@@ -28,6 +34,10 @@ public class TimeSeries extends TreeMap<Integer, Double> {
      */
     public TimeSeries(TimeSeries ts, int startYear, int endYear) {
         super();
+        for(Map.Entry<Integer, Double> entry: ts.entrySet()){
+            if(entry.getKey() >= startYear && entry.getKey() <= endYear)
+                this.put(entry.getKey(), entry.getValue());
+        }
         // TODO: Fill in this constructor.
     }
 
@@ -36,7 +46,7 @@ public class TimeSeries extends TreeMap<Integer, Double> {
      */
     public List<Integer> years() {
         // TODO: Fill in this method.
-        return null;
+        return new ArrayList<>(this.keySet());
     }
 
     /**
@@ -45,7 +55,7 @@ public class TimeSeries extends TreeMap<Integer, Double> {
      */
     public List<Double> data() {
         // TODO: Fill in this method.
-        return null;
+        return new ArrayList<>(this.values());
     }
 
     /**
@@ -59,7 +69,16 @@ public class TimeSeries extends TreeMap<Integer, Double> {
      */
     public TimeSeries plus(TimeSeries ts) {
         // TODO: Fill in this method.
-        return null;
+        TimeSeries tsRes = new TimeSeries(ts, MIN_YEAR, MAX_YEAR);
+        for(Map.Entry<Integer, Double> entry: this.entrySet()){
+            if(tsRes.containsKey(entry.getKey())){
+                tsRes.put(entry.getKey(), tsRes.get(entry.getKey()) + entry.getValue());
+            }
+            else {
+                tsRes.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return tsRes;
     }
 
     /**
@@ -73,7 +92,16 @@ public class TimeSeries extends TreeMap<Integer, Double> {
      */
     public TimeSeries dividedBy(TimeSeries ts) {
         // TODO: Fill in this method.
-        return null;
+        TimeSeries tsRes = new TimeSeries(this, MIN_YEAR, MAX_YEAR);
+        for(Map.Entry<Integer, Double> entry: this.entrySet()){
+            if(ts.containsKey(entry.getKey())){
+                tsRes.put(entry.getKey(), entry.getValue() / ts.get(entry.getKey()));
+            }
+            else {
+                throw new IllegalArgumentException("given TS missing a year that exists in this TimeSeries");
+            }
+        }
+        return tsRes;
     }
 
     // TODO: Add any private helper methods.
